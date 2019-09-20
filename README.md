@@ -1,6 +1,6 @@
 # PROJECT - LOG-ANALYSIS
 
-##Task:##
+## Task:
 
  To create a reporting tool that prints out reports (in plain text) based on the data in the database. This reporting tool is a Python program using the psycopg2 module to connect to the database.
 
@@ -184,4 +184,4 @@ order by num_of_reqs.date;
 (1 row)
 ```
 
-This project belongs to Deepali Musale. &copy; 2019, [github](https://github.com/DeepaliMusale/log-analysis)
+ _ _This project belongs to Deepali Musale. &copy; 2019, [github](https://github.com/DeepaliMusale/log-analysis)_ _
