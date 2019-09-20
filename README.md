@@ -11,16 +11,21 @@
 
 ## Requirements:
 To start on this project, you'll need database software (provided by a Linux virtual machine) and the data to analyze.
+
 [Vagrant](https://www.vagrantup.com/downloads.html) - Vagrant is the software that configures the VM and lets you share files between your host computer and the VM's filesystem.
+
 [Virtual Box](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1) - VirtualBox is the software that actually runs the virtual machine.
- [FSND-Virtual-Machine](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/April/5acfbfa3_fsnd-virtual-machine/fsnd-virtual-machine.zip) - Download the VM configuration file
- [Git](https://git-scm.com/downloads) - We need to use Git Bash terminal
+
+[FSND-Virtual-Machine](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/April/5acfbfa3_fsnd-virtual-machine/fsnd-virtual-machine.zip) - Download the VM configuration file
+ 
+[Git](https://git-scm.com/downloads) - We need to use Git Bash terminal
+
 **Skills** - Python3,PostgreSQL
 
  #### Download the Data
  Download the [database data here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip). You will need to unzip this file after downloading it. The file inside is called newsdata.sql. Put this file into the vagrant directory, which is shared with your virtual machine.
 
- ##Procedure:
+ ## Procedure:
  1) Install Git using the link provided in the requirements section.
  2) Install Vagrant using the link provided in the requirements section.
  3) Install Virtual Machine using the link provided in the requirements section.
@@ -30,11 +35,17 @@ To start on this project, you'll need database software (provided by a Linux vir
  Here's what this command does:
 
  **psql** — the PostgreSQL command line program
+ 
  **-d news** — connect to the database named news which has been set up for you
+ 
  **-f newsdata.sql** — run the SQL statements in the file newsdata.sql
+ 
  Running this command will connect to your installed database server and execute the SQL commands in the downloaded file, creating tables and populating them with data.
+ 
  7) To run the database type, ***psql -d news***
+ 
  8) #### Explore the Data
+ 
  Once you have the data loaded into your database, connect to your database using **psql -d news** and explore the tables using the **\dt** and **\d table** commands and select statements.
 
  **\dt** — display tables — lists the tables that are available in the database.
@@ -42,17 +53,22 @@ To start on this project, you'll need database software (provided by a Linux vir
  Get a sense for what sort of information is in each column of these tables.
 
  The database includes three tables:
+ 
  The ***authors table*** includes information about the authors of articles.
+ 
  The ***articles table*** includes the articles themselves.
+ 
  The ***log table*** includes one entry for each time a user has accessed the site.
 
  9) #### Connecting from your code
  The database that you're working with in this project is running PostgreSQL. So in your code, you'll want to use the ```psycopg2``` Python module to connect to it, for instance:
               ```db = psycopg2.connect("dbname=news")```
+ 
  10) Run the commands from the **list of views** below to run the python program successfully.
+ 
  11) Run command ```python newsdatadb_solution.py;``` to get the queries output
 
-              ## List of Views
+              ##List of Views
 
 **-------------------- First Query-------------------**
 
@@ -167,3 +183,5 @@ order by num_of_reqs.date;
  2016-07-17 |   2.263
 (1 row)
 ```
+
+This project belongs to Deepali Musale. &copy; 2019, [github](https://github.com/DeepaliMusale/log-analysis)
