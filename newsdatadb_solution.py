@@ -21,7 +21,7 @@ for rows in range(0,3):
 def popular_author():
  	db = psycopg2.connect(database=DBNAME)
 	c = db.cursor()
-	query2 = "select name, views from popular_authors order by views desc;"
+	query2 = "select name, views from popular_authors order by views desc limit 5;"
  	c.execute(query2)
  	data2 = c.fetchall()
  	db.close()
