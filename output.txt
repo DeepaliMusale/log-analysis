@@ -1,0 +1,26 @@
+1). What are the most popular articles of all time? 
+
+	 Candidate is jerk, alleges rival - 338647 views 
+
+	 Bears love berries, alleges bear - 253801 views 
+
+	 Bad things gone, say good people - 170098 views 
+
+
+ 2). Who are the most popular article authors of all time? 
+
+	 Rudolf von Treppenwitz - 338647 views 
+
+	 Ursula La Multa - 253801 views 
+
+	 Anonymous Contributor - 170098 views 
+
+	 Ursula La Multa - 84906 views 
+
+	 Rudolf von Treppenwitz - 84810 views 
+
+
+ 3). On which days did more than 1% of requests lead to errors? 
+
+	 2016-07-17 - 2.263 percent 
+
