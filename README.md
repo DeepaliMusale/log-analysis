@@ -55,7 +55,9 @@ As you explore the data, you may find it useful to take notes! Don't try to memo
               ```db = psycopg2.connect("dbname=news")```
 
               ## List of Views
+
 **-------------------- First Query-------------------**
+
 **1) num_of_views**
 
 create view num_views as 
@@ -116,6 +118,7 @@ order by views desc;
 ```
 
 **----------------------Third Query --------------------**
+
 **4) num_of_errors**
 
 create view num_of_errors as 
