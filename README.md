@@ -57,6 +57,7 @@ As you explore the data, you may find it useful to take notes! Don't try to memo
               ## List of Views
 **-------------------- First Query-------------------**
 **1) num_of_views**
+
 create view num_views as 
 select title, count(*) as views
 from articles, log where substring(log.path,10)=articles.slug 
@@ -71,10 +72,12 @@ order by views desc;
  Bears love berries, alleges bear | 253801
  Bad things gone, say good people | 170098
 (3 rows)
+```
 
 **----------------Second Query---------------------**
 
 **2) popular_articles** 
+
 create view popular_articles as select author,num_of_views.title,views from ((articles join authors on articles.author = authors.id) join num_of_views on articles.title=num_of_views.title) order by views desc;
 
 *** select * from popular_articles ***
@@ -90,9 +93,10 @@ create view popular_articles as select author,num_of_views.title,views from ((ar
       4 | Balloon goons doomed               |  84557
       1 | There are a lot of bears           |  84504
       1 | Media obsessed with bears          |  84383
-    ```
+```
 
- **3) popular_authors** 
+**3) popular_authors** 
+
 create view popular_authors as 
 select name, author, popular_articles.title, cast(views as int) from popular_articles join authors on authors.id=popular_articles.author 
 order by views desc;
@@ -108,10 +112,12 @@ order by views desc;
  Ursula La Multa        |  84906
  Rudolf von Treppenwitz |  84810
 (5 rows)
+
 ```
 
 **----------------------Third Query --------------------**
 **4) num_of_errors**
+
 create view num_of_errors as 
 select date(time) as date, count(*) as errors 
 from log where status='404 NOT FOUND' 
@@ -130,6 +136,7 @@ group by date order by date;
 ```
 
 **5) num_of_reqs**
+
 create view num_of_reqs as 
 select date(time) as date, count(*) as reqs 
 from log group by date, order by date;
@@ -147,6 +154,7 @@ from log group by date, order by date;
 ```
 
 **6) percentage**
+
 create view percentage as 
 select cast(num_of_reqs.date as text), cast(round((100.0*num_of_errors.errors/num_of_reqs.reqs), 3) as float(2)) as percent from num_of_reqs, num_of_errors where num_of_reqs.date=num_of_errors.date 
 order by num_of_reqs.date;
